@@ -1,0 +1,81 @@
+<!--
+  Name: Ahmed
+  Student ID: [YOUR ID]
+  Course: FT-WEB-101 Field Training - Task 1 (Profile page)
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Makes the page scale correctly on phones -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ahmed | Profile</title>
+  <!-- The stylesheet is linked from the head -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <!-- Step 1: the name is the one h1 heading -->
+    <h1>Ahmed</h1>
+
+    <!-- Step 1: the bar. Name on the left, links on the right -->
+    <nav class="navbar">
+      <span class="brand">Ahmed</span>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#cards">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Step 2: one photo. The path starts from index.html -->
+    <section id="about" class="about">
+      <img src="images/me.jpg" alt="Portrait of Ahmed, a university student and web developer" class="photo">
+      <p class="intro">Hi! I am a university student who loves building websites. Welcome to my page.</p>
+      <!-- Step 4: the one button. JavaScript finds it by its id -->
+      <button id="theme-toggle" type="button">Dark mode</button>
+    </section>
+
+    <!-- Step 2: three cards in a row -->
+    <section id="cards" class="cards">
+      <article class="card">
+        <h2>Skills</h2>
+        <p>HTML, CSS, and JavaScript for the front end.</p>
+      </article>
+      <article class="card">
+        <h2>Backend</h2>
+        <p>Laravel and MySQL, with database design.</p>
+      </article>
+      <article class="card">
+        <h2>Hobbies</h2>
+        <p>Game design, gaming, and learning new things.</p>
+      </article>
+    </section>
+
+    <!-- Step 3: the form. Each label's "for" matches its input's "id" -->
+    <section id="contact" class="contact">
+      <h2>Contact me</h2>
+      <form action="#" method="get">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Step 5: one copyright line -->
+  <footer>
+    <p>&copy; 2026 Ahmed. All rights reserved.</p>
+  </footer>
+
+  <!-- The script is linked at the very end of body -->
+  <script src="js/script.js"></script>
+</body>
+</html>

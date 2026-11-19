@@ -1,0 +1,201 @@
+/* ---------- Colours stored as variables on :root ---------- */
+:root {
+  --bg: #f5f7fb;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --primary: #4f46e5;
+  --surface: #ffffff;
+  --border: #e5e7eb;
+}
+
+/* Dark colours: the same variables, new values.
+   They apply when JavaScript adds the class "dark" to body. */
+body.dark {
+  --bg: #111827;
+  --text: #f3f4f6;
+  --muted: #9ca3af;
+  --primary: #818cf8;
+  --surface: #1f2937;
+  --border: #374151;
+}
+
+/* ---------- Reset: border-box on everything ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+}
+
+/* ---------- Header and navigation bar ---------- */
+header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+  padding-top: 1.5rem;
+}
+
+h1 {
+  margin: 0 0 1rem;
+  color: var(--primary);
+}
+
+/* Flexbox: name on the left, links on the right */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  background: var(--primary);
+  color: #ffffff;
+}
+
+.brand {
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Main content ---------- */
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+section {
+  margin-bottom: 2.5rem;
+}
+
+/* About: photo, text, and the dark mode button */
+.about {
+  text-align: center;
+}
+
+.photo {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;           /* round photo */
+  border: 4px solid var(--primary);
+}
+
+.intro {
+  color: var(--muted);
+}
+
+/* ---------- Buttons ---------- */
+button {
+  background: var(--primary);
+  color: #ffffff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+/* ---------- Cards: three in a row with a gap ---------- */
+.cards {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.card {
+  flex: 1;                      /* equal width */
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.25rem;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary);
+}
+
+.card h2 {
+  margin-top: 0;
+  color: var(--primary);
+}
+
+/* ---------- Form ---------- */
+.contact form {
+  display: flex;
+  flex-direction: column;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+label {
+  margin: 0.75rem 0 0.25rem;
+  font-weight: bold;
+}
+
+input {
+  padding: 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 1rem;
+  background: var(--surface);
+  color: var(--text);
+}
+
+.contact button {
+  margin-top: 1rem;
+}
+
+.contact h2 {
+  text-align: center;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  text-align: center;
+  padding: 1rem;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+}
+
+/* ---------- Mobile: stack the cards ---------- */
+@media (max-width: 700px) {
+  .cards {
+    flex-direction: column;
+  }
+
+  .navbar {
+    padding: 0.75rem 1rem;
+  }
+
+  .nav-links {
+    gap: 0.75rem;
+  }
+}
